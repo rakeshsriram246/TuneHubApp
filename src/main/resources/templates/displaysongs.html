@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Songs</title>
+<link href="admin.css" rel="stylesheet">
+</head>
+<body>
+<table border="1">
+<thead>
+<tr>
+<th>Name</th>
+<th>Artist</th>
+<th>Genre</th>
+<th>Link</th>
+<tr/>
+</thead>
+<tbody>
+<tr th:each="songslist : ${songslist}">
+<td th:text=${songslist.name}></td>
+<td th:text=${songslist.artist}></td>
+<td th:text=${songslist.genre}></td>
+<td>
+<audio controls>
+<source th:src=${songslist.link} type="audio/mpeg"></source>
+
+</audio>
+</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
